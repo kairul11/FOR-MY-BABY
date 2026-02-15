@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<title>SEMANGAT SAYANG 💥❤️</title>
+<style>
+body{
+  margin:0;
+  font-family:'Comic Sans MS', cursive;
+  background:linear-gradient(135deg,#ff5f9e,#ffc371);
+  overflow:hidden;
+  animation:goyang 0.4s infinite alternate;
+}
+@keyframes goyang{
+  0%{transform:rotate(-0.3deg);}
+  100%{transform:rotate(0.3deg);}
+}
+.card{
+  background:white;
+  margin:80px auto;
+  padding:30px;
+  max-width:520px;
+  border-radius:30px;
+  text-align:center;
+  box-shadow:0 20px 40px rgba(0,0,0,0.3);
+}
+h1{
+  color:#ff1744;
+  font-size:38px;
+}
+#text{
+  font-size:22px;
+  color:#333;
+  min-height:120px;
+}
+button{
+  margin-top:20px;
+  padding:15px 30px;
+  font-size:18px;
+  border:none;
+  border-radius:40px;
+  background:#ff1744;
+  color:white;
+  cursor:pointer;
+  transition:0.3s;
+}
+button:hover{
+  transform:scale(1.15);
+}
+.love{
+  position:fixed;
+  bottom:-20px;
+  font-size:24px;
+  animation:terbang 5s linear infinite;
+}
+@keyframes terbang{
+  0%{transform:translateY(0);opacity:0}
+  50%{opacity:1}
+  100%{transform:translateY(-120vh);opacity:0}
+}
+</style>
+</head>
+<body>
+
+<audio autoplay loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3">
+</audio>
+
+<div class="card">
+  <h1>💥 SEMANGAT SAYANG 💥</h1>
+  <div id="text"></div>
+  <button onclick="ledakan()">JANGAN DIKLIK 😳</button>
+</div>
+
+<script>
+const pesan=[
+  "HALO SAYANGKU 😚",
+  "GIMANA HARI INI?🙄",
+  "PASTI CAPEK BANGET YA🫂",
+  "AKU TAU KAMU CAPEK 🫂",
+  "TAPI KAMU KUAT BANGET 💪",
+  "JANGAN SAMPE NYERAH YA SAYANGKU 😤",
+  "MAAFF YA SAYANGKU,mungkin cewe lain di hari valentine dikasih coklat. tapi aku cuma pengen kamu dikasih sehat terus, dimudahkan dan dilancarkan apa yang sekarang kamu lagi kejar, mungkin nanti jalannya akan panjang, cobaannya akan banyak, arahnya akan rumit tapi tetep sama sama ya, maaff kemarin aku tida ngasi apa apa di hari valentine🤍💐",
+  "AKU SELALU DI BELAKANGMU ❤️",
+  "PELUK JAUH DULU🫂 🤗",
+  "SEMANGAT TERUS YA SAYANGKU 💖🔥"
+];
+let i=0;
+function ketik(){
+  if(i<pesan.length){
+    document.getElementById("text").innerHTML+=pesan[i]+"<br>";
+    i++;
+    setTimeout(ketik,700);
+  }
+}
+ketik();
+
+function hujan(){
+  const em=["❤️","💖","💘","😘","🔥","😆"];
+  const l=document.createElement("div");
+  l.className="love";
+  l.innerHTML=em[Math.floor(Math.random()*em.length)];
+  l.style.left=Math.random()*100+"vw";
+  l.style.fontSize=(20+Math.random()*25)+"px";
+  document.body.appendChild(l);
+  setTimeout(()=>l.remove(),5000);
+}
+setInterval(hujan,200);
+
+function ledakan(){
+  alert("BOOM 💥\nAku sayang kamu gila-gilaan 😘❤️");
+}
+</script>
+
+</body>
+</html>
